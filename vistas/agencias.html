@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestras Agencias - Turismo</title>
+    <!-- Mantenemos coherencia con los estilos base -->
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/agencias.css">
+    <!-- FontAwesome para las estrellas e iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="destinos.html">Destinos</a></li>
+                <li><a href="#">Agencias</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contenedor-agencias">
+        <section class="titulo-seccion">
+            <h1>Agencias Asociadas</h1>
+            <p>Conoce a los expertos que harán realidad tu próximo viaje.</p>
+        </section>
+
+        <section class="grid-agencias">
+            
+            <!-- Agencia 1 -->
+            <article class="flip-card">
+                <div class="flip-card-inner">
+                    <!-- Frente de la tarjeta -->
+                    <div class="flip-card-front">
+                        <img src="../recursos/imagenes/agencia1.jpg" alt="Agencia Explorer">
+                        <div class="info-front">
+                            <h3>Explorer Global</h3>
+                            <p>Especialistas en Aventuras</p>
+                        </div>
+                    </div>
+                    <!-- Dorso de la tarjeta -->
+                    <div class="flip-card-back">
+                        <h3>Detalles de Agencia</h3>
+                        <ul>
+                            <li><i class="fas fa-map-marker-alt"></i> Buenos Aires, ARG</li>
+                            <li><i class="fas fa-plane"></i> +500 destinos</li>
+                            <li><i class="fas fa-clock"></i> Lun - Vie: 9h a 18h</li>
+                        </ul>
+                        
+                        <!-- Sistema de Rating CSS -->
+                        <div class="rating-sistema">
+                            <p>Calificación:</p>
+                            <div class="estrellas">
+                                <input type="radio" name="rating1" id="star1-5"><label for="star1-5">★</label>
+                                <input type="radio" name="rating1" id="star1-4"><label for="star1-4">★</label>
+                                <input type="radio" name="rating1" id="star1-3" checked><label for="star1-3">★</label>
+                                <input type="radio" name="rating1" id="star1-2"><label for="star1-2">★</label>
+                                <input type="radio" name="rating1" id="star1-1"><label for="star1-1">★</label>
+                            </div>
+                        </div>
+                        <button class="btn-contacto">Contactar</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Agencia 2 -->
+            <article class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="../recursos/imagenes/agencia2.jpg" alt="Agencia Luxury">
+                        <div class="info-front">
+                            <h3>Luxury Travel</h3>
+                            <p>Experiencias Premium</p>
+                        </div>
+                    </div>
+                    <div class="flip-card-back">
+                        <h3>Detalles de Agencia</h3>
+                        <ul>
+                            <li><i class="fas fa-map-marker-alt"></i> Madrid, ESP</li>
+                            <li><i class="fas fa-crown"></i> Hoteles 5 Estrellas</li>
+                            <li><i class="fas fa-headset"></i> Soporte 24/7</li>
+                        </ul>
+                        <div class="rating-sistema">
+                            <p>Calificación:</p>
+                            <div class="estrellas">
+                                <input type="radio" name="rating2" id="star2-5"><label for="star2-5">★</label>
+                                <input type="radio" name="rating2" id="star2-4" checked><label for="star2-4">★</label>
+                                <input type="radio" name="rating2" id="star2-3"><label for="star2-3">★</label>
+                                <input type="radio" name="rating2" id="star2-2"><label for="star2-2">★</label>
+                                <input type="radio" name="rating2" id="star2-1"><label for="star2-1">★</label>
+                            </div>
+                        </div>
+                        <button class="btn-contacto">Contactar</button>
+                    </div>
+                </div>
+            </article>
+        
+
+            <article class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="../recursos/imagenes/agencia3.jpg" alt="Agencia EcoVistas">
+                        <div class="info-front">
+                            <h3>EcoVistas Tours</h3>
+                            <p>Turismo Sustentable</p>
+                        </div>
+                    </div>
+                    <div class="flip-card-back">
+                        <h3>Detalles de Agencia</h3>
+                        <ul>
+                            <li><i class="fas fa-map-marker-alt"></i> San José, CRI</li>
+                            <li><i class="fas fa-leaf"></i> Carbono Neutral</li>
+                            <li><i class="fas fa-tree"></i> Guías Certificados</li>
+                        </ul>
+                        <div class="rating-sistema">
+                            <p>Calificación:</p>
+                            <div class="estrellas">
+                                <input type="radio" name="rating3" id="star3-5" checked><label for="star3-5">★</label>
+                                <input type="radio" name="rating3" id="star3-4"><label for="star3-4">★</label>
+                                <input type="radio" name="rating3" id="star3-3"><label for="star3-3">★</label>
+                                <input type="radio" name="rating3" id="star3-2"><label for="star3-2">★</label>
+                                <input type="radio" name="rating3" id="star3-1"><label for="star3-1">★</label>
+                            </div>
+                        </div>
+                        <button class="btn-contacto">Contactar</button>
+                    </div>
+                </div>
+            </article>
+
+        </section>
+    </main>
+
+    <footer class="footer-contenedor">
+        <!-- Reutilizar el contenido del footer del home -->
+        <p>&copy; 2026 Agencia de Turismo. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
