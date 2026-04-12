@@ -1,0 +1,235 @@
+
+
+/* Ocultar los inputs de radio */
+input[type="radio"] {
+    display: none;
+}
+
+/* Estilo para los botones de filtro (labels) */
+.controles-filtro {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 30px 0;
+}
+
+.controles-filtro label {
+    padding: 10px 25px;
+    background: #f0f0f0;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    border: 1px solid transparent;
+}
+
+.controles-filtro label:hover {
+    background: #e0e0e0;
+}
+
+/* Resaltar el filtro activo según el radio seleccionado */
+#todos:checked ~ .controles-filtro label[for="todos"],
+#cultural:checked ~ .controles-filtro label[for="cultural"],
+#naturaleza:checked ~ .controles-filtro label[for="naturaleza"],
+#playa:checked ~ .controles-filtro label[for="playa"],
+#gastronomico:checked ~ .controles-filtro label[for="gastronomico"],
+#religioso:checked ~ .controles-filtro label[for="religioso"] {
+    background: #007bff;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+}
+
+/* Lógica de ocultar elementos SEGÚN EL FILTRO */
+#cultural:checked ~ .galeria-destinos .card:not(.categoria-cultural),
+#naturaleza:checked ~ .galeria-destinos .card:not(.categoria-naturaleza),
+#playa:checked ~ .galeria-destinos .card:not(.categoria-playa),
+#gastronomico:checked ~ .galeria-destinos .card:not(.categoria-gastronomico),
+#religioso:checked ~ .galeria-destinos .card:not(.categoria-religioso) {
+    display: none;
+}
+
+/* =========================================
+   GALERÍA MASONRY CON CSS GRID
+   ========================================= */
+
+.galeria-destinos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-auto-rows: 10px; /* Base para el sistema de spans */
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Estilo base de la Card */
+.card {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    height: 100%; /* Obligatorio para Grid */
+}
+
+/* Clases de altura (Span) */
+.span-pequeno { grid-row: span 25; }
+.span-mediano { grid-row: span 35; }
+.span-grande  { grid-row: span 50; }
+
+/* =========================================
+   EFECTOS: ZOOM Y OVERLAY
+   ========================================= */
+
+/* Contenedor de la imagen: EL TRUCO PARA QUE NO SE VEA RARO */
+.card-imagen-contenedor {
+    position: relative;
+    overflow: hidden;
+    flex: 1; /* Esto hace que la imagen rellene el alto del span */
+    display: flex;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Evita que la imagen se estire */
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Overlay oscuro */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+/* Efectos al pasar el mouse */
+.card:hover img {
+    transform: scale(1.15);
+}
+
+.card:hover .overlay {
+    opacity: 1;
+}
+
+.btn-ver-mas {
+    padding: 12px 25px;
+    background: white;
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    color: #444;
+    cursor: pointer;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+}
+
+.card:hover .btn-ver-mas {
+    transform: translateY(0);
+}
+
+/* Cuerpo de la tarjeta (Texto) */
+.card-body {
+    padding: 20px;
+    background: white;
+    flex-shrink: 0; /* Evita que el texto desaparezca */
+}
+
+.card-body h3 { margin: 0 0 8px 0; color: #333; }
+.card-body p { margin: 0; color: #777; font-size: 0.9em; }
+
+/* =========================================
+   TABLA DE PRECIOS RESPONSIVA
+   ========================================= */
+
+.seccion-precios {
+    padding: 60px 20px;
+    background-color: #f8f9fa;
+}
+
+.seccion-precios h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2em;
+}
+
+.contenedor-tabla {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.tabla-precios {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.tabla-precios th, .tabla-precios td {
+    padding: 18px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.tabla-precios th {
+    background-color: #007bff;
+    color: white;
+    text-transform: uppercase;
+    font-size: 0.85em;
+    letter-spacing: 1px;
+}
+
+/* Chips de estado */
+.estado {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+.disponible { background: #e8f5e9; color: #2e7d32; }
+.limitado { background: #fffde7; color: #f57f17; }
+
+/* MÓVIL (Max 768px) */
+@media screen and (max-width: 768px) {
+    .tabla-precios thead { display: none; }
+    
+    .tabla-precios tr {
+        display: block;
+        margin-bottom: 25px;
+        border: 1px solid #eee;
+        border-radius: 12px;
+        padding: 10px;
+    }
+
+    .tabla-precios td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: right;
+        padding: 12px 10px;
+        border-bottom: 1px solid #f9f9f9;
+    }
+
+    .tabla-precios td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        color: #007bff;
+        text-transform: uppercase;
+        font-size: 0.75em;
+    }
+
+    .tabla-precios td:last-child { border-bottom: 0; }
+}
