@@ -1,6 +1,7 @@
 .seccion-testimonios {
     padding: 70px 20px;
-    background-color: #f4f6f8;
+    background-color: var(--surface-color);
+    transition: background-color var(--transition-speed) ease;
 }
 
 .titulo-seccion {
@@ -10,16 +11,18 @@
 
 .titulo-seccion h2 {
     font-size: 2.5rem;
-    color: #2b2d42;
+    color: var(--text-main);
     margin-bottom: 10px;
     margin-top: 0;
+    transition: color var(--transition-speed) ease;
 }
 
 .titulo-seccion p {
-    color: #666;
+    color: var(--text-muted);
     font-size: 1.1rem;
     max-width: 600px;
     margin: 0 auto;
+    transition: color var(--transition-speed) ease;
 }
 
 .carrusel-track {
@@ -30,7 +33,7 @@
     gap: 30px;
     padding-bottom: 30px;
     scrollbar-width: thin;
-    scrollbar-color: #ccc transparent;
+    scrollbar-color: var(--text-muted) transparent;
 }
 
 .carrusel-track::-webkit-scrollbar {
@@ -38,7 +41,7 @@
 }
 
 .carrusel-track::-webkit-scrollbar-thumb {
-    background-color: #ccc;
+    background-color: var(--text-muted);
     border-radius: 4px;
 }
 
@@ -46,32 +49,35 @@
     flex: 0 0 320px;
     scroll-snap-align: center;
 
-    background-color: white;
+    background-color: var(--card-bg);
     padding: 40px;
     border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    box-shadow: var(--shadow-sm);
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, background-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
 }
 
 .slide-testimonio:hover {
     transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
 }
 
 .slide-testimonio .cita {
     font-size: 1.05rem;
     font-style: italic;
-    color: #444;
+    color: var(--text-main);
     line-height: 1.6;
     margin-bottom: 20px;
+    transition: color var(--transition-speed) ease;
 }
 
 .slide-testimonio h4 {
-    color: #e63946;
+    color: var(--accent-red);
     margin: 0;
     font-size: 1.1rem;
+    transition: color var(--transition-speed) ease;
 }

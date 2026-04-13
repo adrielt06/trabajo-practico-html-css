@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+/* =========================================================================
+   GENERAL.CSS - CONFIGURACIÓN BASE Y TEMA CLARO 
+   ========================================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #0070f3;
+    --primary-hover: #0051a8;
+    --secondary-color: #f7f9fc;
+    --accent-color: #ff3366;
+    --bg-color: #ffffff;
+    --surface-color: #f4f7fb;
+    --text-main: #111827;
+    --text-muted: #6b7280;
+    --border-color: #e5e7eb;
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 10px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+    --header-bg: rgba(240, 248, 255, 0.95);
+    --footer-bg: #f4f9ff;
+    --footer-text-main: #334155;
+    --footer-text-muted: #64748b;
+    --footer-border: #e2e8f0;
+    --footer-surface: #ffffff;
+    --footer-bottom-bg: #ebf3fb;
+    --card-bg: #ffffff;
+    --card-border: #eeeeee;
+    --accent-red: #e63946;
+    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --transition-speed: 0.3s;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+    /* Transición suave para cuando se cambie tema */
+    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--text-main);
+    font-weight: 700;
+}
+
+/* =========================================================================
+   TEMA OSCURO
+   Sobrescribe todas las variables claras anteriores
+   ========================================================================= */
+[data-theme="dark"] {
+    --primary-color: #3b82f6;
+    --primary-hover: #60a5fa;
+    --bg-color: #0f172a;
+    --surface-color: #1e293b;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --border-color: #334155;
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 10px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.5);
+    --header-bg: rgba(15, 23, 42, 0.85);
+    --footer-bg: #0b1120;
+    --footer-text-main: #e2e8f0;
+    --footer-text-muted: #64748b;
+    --footer-border: #1e293b;
+    --footer-surface: #1e293b;
+    --footer-bottom-bg: #020617;
+    --card-bg: #1e293b;
+    --card-border: #334155;
+    --accent-red: #f87171;
+}
