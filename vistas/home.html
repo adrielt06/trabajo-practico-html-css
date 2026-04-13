@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <!-- CSS General (Variables, Reset, Estilos Compartidos) -->
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/nav.css">
     <link rel="stylesheet" href="../css/home.css">
     <link rel="stylesheet" href="../css/cards.css">
     <link rel="stylesheet" href="../css/carrusel-testimonios.css">
@@ -11,66 +14,79 @@
     <!-- Enlace a la librería de íconos FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="../scripts/contador-cards.js" defer></script>
+    <script src="../scripts/modo-oscuro.js" defer></script>
 </head>
 
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="destinos.html">Destinos</a></li>
-                <li><a href="agencias.html">Agendas</a></li>
-                <li><a href="#">Precios</a></li>
-            </ul>
-        </nav>
+        <nav class="nav-principal">
+            <div class="nav-container">
+                <a href="home.html" class="logo">
+                    <img src="../recursos/imagenes/logo.webp" alt="Logo">
+                </a>
+                <ul class="nav-links">
+                    <li><a href="destinos.html">Destinos</a></li>
+                    <li><a href="agencias.html">Agendas</a></li>
+                    <li><a href="#">Precios</a></li>
+                </ul>
 
-        <section class="hero" id="hero">
-            <video autoplay loop muted playsinline class="video-hero">
-                <source src="../recursos/videos/destinos.mp4" type="video/mp4">
-            </video>
-            <div class="hero-contenido">
-                <h1>Explora el mundo</h1>
-                <p>Descubre los mejores destinos turísticos</p>
+                <!-- Controles Adicionales -->
+                <div class="nav-acciones">
+                    <button class="btn-tema" id="btn-tema" aria-label="Cambiar modo claro/oscuro">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
             </div>
-        </section>
-
-        <section class="contenedor-cards">
-            <article class="card">
-                <img src="../recursos/imagenes/tokio.webp" alt="">
-                <div class="card-body">
-                    <h3>Tokio</h3>
-                    <p>Disfruta de la ciudad de los templos y la tecnología</p>
-                    <div class="acciones-card">
-                        <button class="btn-interesa">Me interesa</button>
-                        <span class="contador-texto"><span class="contador-numero">0</span> interesados!</span>
-                    </div>
-                </div>
-            </article>
-
-            <article class="card">
-                <img src="../recursos/imagenes/paris.jpg" alt="">
-                <div class="card-body">
-                    <h3>Paris</h3>
-                    <p>Disfruta de la ciudad de la moda y el arte</p>
-                    <div class="acciones-card">
-                        <button class="btn-interesa">Me interesa</button>
-                        <span class="contador-texto"><span class="contador-numero">0</span> interesados!</span>
-                    </div>
-                </div>
-            </article>
-
-            <article class="card">
-                <img src="../recursos/imagenes/monaco.jpg" alt="">
-                <div class="card-body">
-                    <h3>Monaco</h3>
-                    <p>Disfruta de la ciudad de las carreras y los yates</p>
-                    <div class="acciones-card">
-                        <button class="btn-interesa">Me interesa</button>
-                        <span class="contador-texto"><span class="contador-numero">0</span> interesados!</span>
-                    </div>
-                </div>
-            </article>
-        </section>
+        </nav>
     </header>
+
+    <section class="hero" id="hero">
+        <video autoplay loop muted playsinline class="video-hero">
+            <source src="../recursos/videos/destinos.mp4" type="video/mp4">
+        </video>
+        <div class="hero-contenido">
+            <h1>Explora el mundo</h1>
+            <p>Descubre los mejores destinos turísticos</p>
+        </div>
+    </section>
+
+    <section class="contenedor-cards">
+        <article class="card">
+            <img src="../recursos/imagenes/tokio.webp" alt="">
+            <div class="card-body">
+                <h3>Tokio</h3>
+                <p>Disfruta de la ciudad de los templos y la tecnología</p>
+                <div class="acciones-card">
+                    <button class="btn-interesa">Me interesa</button>
+                    <span class="contador-texto"><span class="contador-numero">0</span> interesados!</span>
+                </div>
+            </div>
+        </article>
+
+        <article class="card">
+            <img src="../recursos/imagenes/paris.jpg" alt="">
+            <div class="card-body">
+                <h3>Paris</h3>
+                <p>Disfruta de la ciudad de la moda y el arte</p>
+                <div class="acciones-card">
+                    <button class="btn-interesa">Me interesa</button>
+                    <span class="contador-texto"><span class="contador-numero">0</span> interesados!</span>
+                </div>
+            </div>
+        </article>
+
+        <article class="card">
+            <img src="../recursos/imagenes/monaco.jpg" alt="">
+            <div class="card-body">
+                <h3>Monaco</h3>
+                <p>Disfruta de la ciudad de las carreras y los yates</p>
+                <div class="acciones-card">
+                    <button class="btn-interesa">Me interesa</button>
+                    <span class="contador-texto"><span class="contador-numero">0</span> interesados!</span>
+                </div>
+            </div>
+        </article>
+    </section>
 
     <main>
         <section class="seccion-testimonios">
@@ -123,32 +139,55 @@
         </section>
     </main>
 
-    <footer class="footer-contenedor">
-        <form>
-            <label for="email">Suscríbete al boletín</label>
-            <input type="email" id="email" name="email" placeholder="Ingresa tu correo">
-            <label for="terminos">Acepto los términos y condiciones</label>
-            <input type="checkbox" id="terminos" name="terminos" required>
-            <button type="submit" class="btn">Enviar</button>
-        </form>
+    <footer class="footer-principal">
+        <div class="footer-container">
+            <!-- Columna 1: Boletín -->
+            <div class="footer-seccion footer-boletin">
+                <h3>Suscríbete al boletín</h3>
+                <p>Recibe las mejores ofertas y destinos para tus próximos viajes en tu bandeja de entrada.</p>
+                <form class="form-boletin">
+                    <div class="input-grupo">
+                        <input type="email" id="email" name="email" placeholder="Ingresa tu correo" required>
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </div>
+                    <div class="checkbox-grupo">
+                        <input type="checkbox" id="terminos" name="terminos" required>
+                        <label for="terminos">Acepto los términos y condiciones</label>
+                    </div>
+                </form>
+            </div>
 
-        <div class="redes-sociales">
-            <a href="https://www.facebook.com/">
-                <i class="fab fa-facebook-f"></i> Facebook
-            </a>
-            <a href="https://x.com/">
-                <i class="fab fa-twitter"></i> Twitter
-            </a>
-            <a href="https://www.instagram.com/">
-                <i class="fab fa-instagram"></i> Instagram
-            </a>
+            <!-- Columna 2: Redes Sociales -->
+            <div class="footer-seccion footer-social">
+                <h3>Síguenos en las redes</h3>
+                <p>Únete a nuestra comunidad y descubre más sobre nuestras aventuras alrededor del mundo.</p>
+                <div class="redes-sociales">
+                    <a href="https://www.facebook.com/" class="btn-icon" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://x.com/" class="btn-icon" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.instagram.com/" class="btn-icon" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Columna 3: Mapa -->
+            <div class="footer-seccion footer-mapa">
+                <h3>Nuestras Oficinas</h3>
+                <div class="mapa-contenedor">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d22743.92999949358!2d-65.29676300302103!3d-24.174256554197044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sar!4v1775945830629!5m2!1ses-419!2sar"
+                        style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
         </div>
 
-        <div class="mapa-contenedor">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d22743.92999949358!2d-65.29676300302103!3d-24.174256554197044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sar!4v1775945830629!5m2!1ses-419!2sar"
-                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Travel Agency. Todos los derechos reservados.</p>
         </div>
     </footer>
 
