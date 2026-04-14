@@ -1,16 +1,10 @@
-/* =========================================
-   BLOG.CSS - ESTILOS ESTILO REVISTA / NEWSPAPER
-   ========================================= */
-
-/* Contenedor y general */
 .contenedor-blog {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-    margin-top: 100px; /* Separación del header */
+    margin-top: 100px;
 }
 
-/* Título de la sección */
 .titulo-seccion {
     text-align: center;
     margin-bottom: 2rem;
@@ -26,9 +20,6 @@
     padding-bottom: 10px;
 }
 
-/* =========================================
-   SISTEMA DE FILTRADO CSS
-   ========================================= */
 input[type="radio"] {
     display: none;
 }
@@ -60,26 +51,21 @@ input[type="radio"] {
     color: var(--primary-color);
 }
 
-/* Resaltar filtro activo */
-#filtro-todos:checked ~ .controles-filtro label[for="filtro-todos"],
-#filtro-tips:checked ~ .controles-filtro label[for="filtro-tips"],
-#filtro-aventura:checked ~ .controles-filtro label[for="filtro-aventura"],
-#filtro-cultura:checked ~ .controles-filtro label[for="filtro-cultura"] {
+#filtro-todos:checked~.controles-filtro label[for="filtro-todos"],
+#filtro-tips:checked~.controles-filtro label[for="filtro-tips"],
+#filtro-aventura:checked~.controles-filtro label[for="filtro-aventura"],
+#filtro-cultura:checked~.controles-filtro label[for="filtro-cultura"] {
     background: var(--primary-color);
     color: white;
     border-color: var(--primary-color);
 }
 
-/* Lógica de ocultamiento según filtro activo */
-#filtro-tips:checked ~ .blog-grid .blog-card:not(.categoria-tips),
-#filtro-aventura:checked ~ .blog-grid .blog-card:not(.categoria-aventura),
-#filtro-cultura:checked ~ .blog-grid .blog-card:not(.categoria-cultura) {
+#filtro-tips:checked~.blog-grid .blog-card:not(.categoria-tips),
+#filtro-aventura:checked~.blog-grid .blog-card:not(.categoria-aventura),
+#filtro-cultura:checked~.blog-grid .blog-card:not(.categoria-cultura) {
     display: none;
 }
 
-/* =========================================
-   DISEÑO NEWSPAPER (CSS GRID)
-   ========================================= */
 .blog-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -87,7 +73,6 @@ input[type="radio"] {
     gap: 20px;
 }
 
-/* Estructura base de las noticias */
 .blog-card {
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
@@ -148,7 +133,6 @@ input[type="radio"] {
     justify-content: space-between;
 }
 
-/* Asimetría del grid (Noticia principal y secundarias) */
 .destacado {
     grid-column: span 3;
     grid-row: span 2;
@@ -171,9 +155,13 @@ input[type="radio"] {
     font-size: 2.2em;
 }
 
-/* Otros tamañós para variedad */
-.span-2-cols { grid-column: span 2; }
-.span-2-rows { grid-row: span 2; }
+.span-2-cols {
+    grid-column: span 2;
+}
+
+.span-2-rows {
+    grid-row: span 2;
+}
 
 .span-2-rows .blog-imagen {
     height: 100%;
@@ -194,32 +182,51 @@ input[type="radio"] {
     position: relative;
     border: none;
 }
+
 .span-2-rows .blog-contenido {
-    display: none; /* Layout alternativo superponiendo el título en imagen si así se requiere, o simplemente más alto */
+    display: none;
 }
 
-/* Ajustes Responsivos para el Grid */
 @media screen and (max-width: 1024px) {
-    .blog-grid { grid-template-columns: repeat(2, 1fr); }
-    .destacado { grid-column: span 2; flex-direction: column; }
-    .destacado .blog-imagen { width: 100%; height: 300px; border-right: none; border-bottom: 3px solid var(--text-main); }
-    .destacado .blog-contenido { width: 100%; }
+    .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .destacado {
+        grid-column: span 2;
+        flex-direction: column;
+    }
+
+    .destacado .blog-imagen {
+        width: 100%;
+        height: 300px;
+        border-right: none;
+        border-bottom: 3px solid var(--text-main);
+    }
+
+    .destacado .blog-contenido {
+        width: 100%;
+    }
 }
 
 @media screen and (max-width: 600px) {
-    .blog-grid { grid-template-columns: 1fr; }
-    .blog-card { grid-column: span 1 !important; grid-row: span 1 !important; }
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .blog-card {
+        grid-column: span 1 !important;
+        grid-row: span 1 !important;
+    }
 }
 
-/* =========================================
-   SCROLL REVEAL (CSS ONLY)
-   ========================================= */
 @keyframes revelarEntrada {
     0% {
         opacity: 0;
         transform: translateY(80px);
         filter: blur(5px);
     }
+
     100% {
         opacity: 1;
         transform: translateY(0);
@@ -227,18 +234,16 @@ input[type="radio"] {
     }
 }
 
-/* Usamos timeline si el navegador lo soporta, sino simplemente se ve normal sin animar (Degradación elegante) */
 @supports (animation-timeline: view()) {
-    .blog-card, .comentario {
+
+    .blog-card,
+    .comentario {
         animation: revelarEntrada linear forwards;
         animation-timeline: view();
         animation-range: entry 5% cover 25%;
     }
 }
 
-/* =========================================
-   SECCIÓN DE COMENTARIOS y AVATARES CSS
-   ========================================= */
 .seccion-comentarios {
     margin-top: 80px;
     padding-top: 40px;
@@ -265,7 +270,6 @@ input[type="radio"] {
     border: 1px solid var(--border-color);
 }
 
-/* AVATAR CREADO CON CSS PURO (Figuras Absctractas/Silueta) */
 .avatar-css {
     width: 60px;
     height: 60px;
@@ -277,7 +281,6 @@ input[type="radio"] {
     border: 2px solid var(--primary-color);
 }
 
-/* Cabeza de la silueta */
 .avatar-css::after {
     content: "";
     position: absolute;
@@ -290,7 +293,6 @@ input[type="radio"] {
     border-radius: 50%;
 }
 
-/* Cuerpo de la silueta (hombros al fondo) */
 .avatar-css::before {
     content: "";
     position: absolute;
@@ -303,7 +305,6 @@ input[type="radio"] {
     border-radius: 50% 50% 0 0;
 }
 
-/* Estilos de contenido del comentario */
 .info-comentario {
     flex-grow: 1;
 }
