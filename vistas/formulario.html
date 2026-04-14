@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto - TravelApp</title>
+
+  <link rel="stylesheet" href="../css/general.css" />
+  <link rel="stylesheet" href="../css/nav.css" />
+  <link rel="stylesheet" href="../css/formulario.css" />
+  <link rel="stylesheet" href="../css/footer.css" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <script src="../scripts/modo-oscuro.js" defer></script>
+  <script src="../scripts/formulario.js" defer></script>
+</head>
+
+<body data-theme="light">
+  <nav class="nav-principal">
+    <div class="nav-container">
+      <a href="home.html" class="logo">
+        <img src="../recursos/imagenes/logo.webp" alt="Logo" />
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="destinos.html">Destinos</a></li>
+        <li><a href="agencias.html">Agencias</a></li>
+        <li><a href="precios.html">Precios</a></li>
+        <li><a href="formulario.html" aria-current="page">Contacto</a></li>
+      </ul>
+
+      <div class="nav-acciones">
+        <button id="btn-tema" class="btn-tema" aria-label="Cambiar tema">
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <header class="contacto-hero">
+    <div class="contacto-hero__contenido">
+      <h1>Contacto</h1>
+      <p>Te respondemos a la brevedad. Completá el formulario y contanos qué necesitás.</p>
+    </div>
+  </header>
+
+  <main class="contacto-main">
+    <section class="contacto-grid" aria-label="Formulario de contacto">
+      <aside class="contacto-info" aria-label="Información de contacto">
+        <h2>Canales</h2>
+
+        <ul class="contacto-info__lista">
+          <li><i class="fa-solid fa-envelope"></i> <span>contacto@travelapp.com</span></li>
+          <li><i class="fa-solid fa-phone"></i> <span>+54 388 000-0000</span></li>
+          <li><i class="fa-solid fa-location-dot"></i> <span>San Salvador de Jujuy</span></li>
+        </ul>
+      </aside>
+
+      <section class="contacto-card" aria-label="Formulario">
+        <h2>Escribinos</h2>
+
+        <form id="contact-form" class="form-contacto" novalidate>
+          <div class="campo">
+            <label for="nombre">Nombre y apellido</label>
+            <input
+              id="nombre"
+              name="nombre"
+              type="text"
+              placeholder="Ej: Manzana Manzananita "
+              minlength="3"
+              required
+              autocomplete="name"
+              aria-describedby="nombre-ayuda"
+            />
+            <p class="ayuda" id="nombre-ayuda">Mínimo 3 caracteres.</p>
+            <p class="error">Revisá el nombre.</p>
+          </div>
+
+          <div class="campo">
+            <label for="email">Email</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="Ej: manzana@mail.com"
+              required
+              autocomplete="email"
+            />
+            <p class="ayuda">Usá un email válido.</p>
+            <p class="error">Ingresá un email válido.</p>
+          </div>
+
+          <div class="campo">
+            <label for="telefono">Teléfono (opcional)</label>
+            <input
+              id="telefono"
+              name="telefono"
+              type="tel"
+              placeholder="Ej: 3881234567"
+              pattern="^[0-9+\-\s]{8,20}$"
+              autocomplete="tel"
+            />
+            <p class="ayuda">Solo números, espacios, + o - (8 a 20 caracteres).</p>
+            <p class="error">Formato de teléfono inválido.</p>
+          </div>
+
+          <div class="campo">
+            <label for="asunto">Asunto</label>
+            <select id="asunto" name="asunto" required>
+              <option value="" selected disabled>Elegí una opción</option>
+              <option value="reserva">Reserva</option>
+              <option value="cotizacion">Cotización</option>
+              <option value="reclamo">Reclamo</option>
+              <option value="otro">Otro</option>
+            </select>
+            <p class="ayuda">Elegí el motivo del contacto.</p>
+            <p class="error">Seleccioná un asunto.</p>
+          </div>
+
+          <div class="campo campo--full">
+            <label for="mensaje">Mensaje</label>
+            <textarea
+              id="mensaje"
+              name="mensaje"
+              placeholder="Contanos qué destino te interesa y fechas aproximadas…"
+              minlength="10"
+              required
+            ></textarea>
+            <p class="ayuda">Mínimo 10 caracteres.</p>
+            <p class="error">El mensaje es muy corto.</p>
+          </div>
+
+          <div class="acciones campo--full">
+            <label class="check">
+              <input id="terminos" name="terminos" type="checkbox" required />
+              <span>Acepto términos y condiciones</span>
+            </label>
+
+            <button class="btn-enviar" type="submit">
+              <span class="btn-texto">Enviar</span>
+              <span class="spinner" aria-hidden="true"></span>
+            </button>
+          </div>
+        </form>
+      </section>
+    </section>
+  </main>
+
+  <!-- Modal de confirmación -->
+  <div class="modal" id="modal-ok" role="dialog" aria-modal="true" aria-labelledby="modal-titulo" aria-hidden="true">
+    <div class="modal__overlay" data-close></div>
+
+    <div class="modal__panel">
+      <h2 id="modal-titulo">¡Mensaje enviado!</h2>
+      <p>Gracias por contactarnos. Te vamos a responder por email.</p>
+
+      <div class="modal__acciones">
+        <a class="modal__btn" href="home.html">Volver al Home</a>
+        <button class="modal__btn modal__btn--sec" type="button" data-close>Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer-principal">
+    <div class="footer-container">
+      <div class="footer-seccion footer-boletin">
+        <h3>Suscríbete al boletín</h3>
+        <p>Recibe las mejores ofertas y destinos para tus próximos viajes.</p>
+        <form class="form-boletin">
+          <div class="input-grupo">
+            <input type="email" placeholder="Ingresa tu correo" required />
+            <button type="submit" class="btn btn-primary">Enviar</button>
+          </div>
+          <div class="checkbox-grupo">
+            <input type="checkbox" id="terminos-footer" required />
+            <label for="terminos-footer">Acepto los términos y condiciones</label>
+          </div>
+        </form>
+      </div>
+
+      <div class="footer-seccion footer-social">
+        <h3>Síguenos</h3>
+        <p>Únete a nuestra comunidad.</p>
+        <div class="redes-sociales">
+          <a href="https://www.facebook.com/" class="btn-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://x.com/" class="btn-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.instagram.com/" class="btn-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-seccion footer-mapa">
+        <h3>Nuestras Oficinas</h3>
+        <div class="mapa-contenedor">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d22743.92999949358!2d-65.29676300302103!3d-24.174256554197044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sar!4v1775945830629!5m2!1ses-419!2sar"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Mapa"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Travel Agency. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+</body>
+</html>
