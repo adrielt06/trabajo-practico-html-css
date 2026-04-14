@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - TravelApp</title>
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/contacto.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="../scripts/modo-oscuro.js" defer></script>
+    <script src="../scripts/contacto.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <nav class="nav-principal">
+            <div class="nav-container">
+                <a href="home.html" class="logo">
+                    <h2><i class="fas fa-plane-departure" style="color: var(--primary-color);"></i> TravelApp</h2>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="destinos.html">Destinos</a></li>
+                    <li><a href="agencias.html">Agencias</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contacto.html" style="color: var(--primary-color); font-weight: bold;">Contacto</a>
+                    </li>
+                </ul>
+                <div class="nav-acciones">
+                    <button class="btn-tema" id="btn-tema" aria-label="Cambiar modo de tema">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="contenedor-contacto">
+        <section class="titulo-contacto">
+            <h1>Escríbenos</h1>
+            <p>Déjanos tu mensaje y un asesor de viajes se comunicará contigo a la brevedad.</p>
+        </section>
+
+        <form id="formulario-contacto" class="formulario-contacto">
+            <div class="form-grid">
+                <div class="grupo-input">
+                    <label for="nombre">Nombre Completo</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ej. Juan Pérez" required minlength="3">
+                </div>
+                <div class="grupo-input">
+                    <label for="email">Correo Electrónico</label>
+                    <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+                </div>
+            </div>
+
+            <div class="grupo-input">
+                <label for="asunto">Asunto</label>
+                <select id="asunto" name="asunto" required>
+                    <option value="" disabled selected>Selecciona el motivo de tu consulta...</option>
+                    <option value="presupuesto">Solicitar Presupuesto a Medida</option>
+                    <option value="duda">Duda General de Destinos</option>
+                    <option value="reclamo">Atención al Cliente o Reclamos</option>
+                    <option value="otro">Otro Motivo</option>
+                </select>
+            </div>
+
+            <div class="grupo-input">
+                <label for="mensaje">Mensaje</label>
+                <textarea id="mensaje" name="mensaje" rows="6" placeholder="Escribe tu mensaje aquí..." required
+                    minlength="15"></textarea>
+            </div>
+
+            <button type="submit" id="btn-submit" class="btn-submit">
+                <span class="btn-texto">Enviar Mensaje</span>
+                <span class="spinner"></span>
+            </button>
+        </form>
+    </main>
+
+    <div id="modal-confirmacion" class="modal-overlay">
+        <div class="modal-contenido">
+            <div class="modal-icono">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h2>¡Mensaje Enviado!</h2>
+            <p>Gracias por contactarnos. Hemos recibido tu mensaje correctamente y nos pondremos en contacto contigo lo
+                antes posible.</p>
+            <button id="btn-cerrar-modal" class="btn-cerrar-modal">Aceptar y Continuar</button>
+        </div>
+    </div>
+
+    <footer class="footer-principal">
+        <div class="footer-container">
+            <div class="footer-seccion footer-boletin">
+                <h3>Únete a nuestro Boletín</h3>
+                <p>Recibe ofertas exclusivas y guía de destinos en tu inbox.</p>
+                <form class="form-boletin">
+                    <div class="input-grupo">
+                        <input type="email" placeholder="Tu correo electrónico" required>
+                        <button type="submit" class="btn" style="padding: 10px 15px;">Suscribir</button>
+                    </div>
+                    <label class="checkbox-grupo">
+                        <input type="checkbox" required>
+                        Acepto la política de privacidad
+                    </label>
+                </form>
+            </div>
+
+            <div class="footer-seccion footer-social">
+                <h3>Síguenos</h3>
+                <p>Mantente al día con nuestras últimas aventuras.</p>
+                <div class="redes-sociales">
+                    <a href="#" class="btn-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="btn-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="btn-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="btn-icon"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-seccion footer-mapa">
+                <h3>Dónde estamos</h3>
+                <div class="mapa-contenedor">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13136.06691436155!2d-58.3815704!3d-34.603722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccacf739efad3%3A0xe543fa0032e3a58e!2sObelisco!5e0!3m2!1ses!2sar!4v1714102875143!5m2!1ses!2sar"
+                        allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 TravelApp. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
