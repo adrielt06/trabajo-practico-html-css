@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Precios - Horizontes Viajes Vacacionales</title>
+    
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/precios.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body data-theme="light">
+
+    <nav class="nav-principal">
+        <div class="nav-container">
+            <a href="home.html" class="logo">
+                <img src="../recursos/imagenes/logo.webp" alt="Logo">
+            </a>
+            <ul class="nav-links">
+                    <li><a href="home.html">Home</a></li> 
+                    <li><a href="destinos.html">Destinos</a></li> 
+                    <li><a href="agencias.html">Agencias</a></li> 
+            </ul>
+            <div class="nav-acciones">
+                <button id="btn-tema" class="btn-tema" aria-label="Cambiar tema">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-contenido">
+            <h1>Comparador de precios</h1>
+            <p>Encontrá el destino ideal según tu presupuesto</p>
+        </div>
+    </section>
+
+    <main>
+        <section class="seccion-cards">
+            <div class="titulo-seccion">
+                <h2>Planes disponibles</h2>
+            </div>
+            <div class="contenedor-cards">
+                <article class="card">
+                    <span class="etiqueta-plan">Básico</span>
+                    <p class="precio">$59.000</p>
+                    <p class="descripcion">Alojamiento + traslado</p>
+                    <ul class="lista-incluye">
+                        <li>Alojamiento 3 noches</li>
+                        <li>Traslado aeropuerto</li>
+                        <li>Mapa turístico</li>
+                    </ul>
+                    <a href="#" class="btn">Ver destinos</a>
+                </article>
+
+                <article class="card card-destacada">
+                    <span class="etiqueta-plan">Recomendado</span>
+                    <p class="precio">$99.999</p>
+                    <p class="descripcion">Todo incluido · 5 días</p>
+                    <ul class="lista-incluye">
+                        <li>Alojamiento 5 noches</li>
+                        <li>Traslado aeropuerto</li>
+                        <li>Cabaña exclusiva</li>
+                        <li>Desayuno incluido</li>
+                    </ul>
+                    <a href="#" class="btn">Ver destinos</a> 
+                </article>
+
+                <article class="card">
+                    <span class="etiqueta-plan">Premium</span>
+                    <p class="precio">$140.000</p>
+                    <p class="descripcion">Experiencia completa</p>
+                    <ul class="lista-incluye">
+                        <li>Alojamiento 7 noches</li>
+                        <li>Vuelo incluido</li>
+                        <li>Guía privado</li>
+                        <li>Todas las comidas</li>
+                    </ul>
+                    <a href="#" class="btn">Ver destinos</a>
+                </article>
+            </div>
+        </section>
+
+        <section class="seccion-tabla">
+            <div class="titulo-seccion">
+                <h2>Destinos y precios detallados</h2>
+            </div>
+            <div class="tabla-wrapper">
+                <table class="tabla-precios">
+                    <thead>
+                        <tr>
+                            <th>Destino</th>
+                            <th>Categoría</th>
+                            <th>Duración</th>
+                            <th>Precio</th>
+                            <th>Incluye</th>
+                            <th>Disponibilidad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Destino">Quebrada de Humahuaca</td>
+                            <td data-label="Categoría">Cultural</td>
+                            <td data-label="Duración">3 días</td>
+                            <td data-label="Precio" title="Precio por persona">
+                                $45.000 <span class="icono-info">i</span>
+                            </td>
+                            <td data-label="Incluye">Alojamiento + traslado</td>
+                            <td data-label="Disponibilidad">Disponible</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Destino">Salinas Grandes</td>
+                            <td data-label="Categoría">Naturaleza</td>
+                            <td data-label="Duración">1 día</td>
+                            <td data-label="Precio" title="Excursión desde Jujuy capital">
+                                $18.000 <span class="icono-info">i</span>
+                            </td>
+                            <td data-label="Incluye">Solo traslado</td>
+                            <td data-label="Disponibilidad">Disponible</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Destino">Yungas Jujeñas</td>
+                            <td data-label="Categoría">Naturaleza</td>
+                            <td data-label="Duración">5 días</td>
+                            <td data-label="Precio" title="Incluye acceso a senderos">
+                                $89.000 <span class="icono-info">i</span>
+                            </td>
+                            <td data-label="Incluye">Todo incluido</td>
+                            <td data-label="Disponibilidad">Pocas plazas</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-principal">
+        <div class="footer-container">
+            <div class="footer-seccion">
+                <h3>Suscríbete al boletín</h3>
+                <p>Recibe las mejores ofertas y destinos para tus próximos viajes en tu bandeja de entrada.</p>
+                <form class="form-boletin">
+                    <div class="input-grupo">
+                        <input type="email" placeholder="Ingresa tu correo" required>
+                        <button type="submit" class="btn">Enviar</button>
+                    </div>
+                    <div class="checkbox-grupo">
+                        <input type="checkbox" id="terminos" required>
+                        <label for="terminos">Acepto los términos y condiciones</label>
+                    </div>
+                </form>
+            </div>
+
+            <div class="footer-seccion">
+                <h3>Síguenos en las redes</h3>
+                <p>Únete a nuestra comunidad y descubre más sobre nuestras aventuras alrededor del mundo.</p>
+                <div class="redes-sociales">
+                    <a href="#" class="btn-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="btn-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="btn-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-seccion">
+                <h3>Nuestras oficinas</h3>
+                <div class="mapa-contenedor">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d22743.92999949358!2d-65.29676300302103!3d-24.174256554197044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sar!4v1775945830629!5m2!1ses-419!2sar"
+                        style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 Travel Agency. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <script src="../scripts/modo-oscuro.js"></script>
+</body>
+</html>

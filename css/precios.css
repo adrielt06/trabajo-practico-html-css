@@ -1,0 +1,240 @@
+.hero {
+    position: relative;
+    height: 50vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 112, 243, 0.2) 100%);
+    z-index: 1;
+}
+
+.hero-contenido {
+    position: relative;
+    z-index: 2;
+    animation: subirYDesvanecer 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* =========================================
+   SECCIÓN DE TARJETAS
+   ========================================= */
+.seccion-cards {
+    padding: 60px 20px;
+    background-color: var(--bg-color);
+}
+
+.contenedor-cards {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;  
+    flex-wrap: wrap;        
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 30px;
+    width: 320px; /* Ancho fijo para mantener simetría */
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--card-border);
+    transition: all var(--transition-speed) ease;
+}
+
+.card .btn {
+    display: block; /* Ocupa el ancho disponible para mejor clicabilidad */
+    text-align: center;
+    background-color: var(--primary-color, #0070f3); /* Azul Horizontes */
+    color: #ffffff; /* Texto blanco para máximo contraste */
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 50px; /* Bordes redondeados según el diseño del Home */
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-top: auto; /* Lo empuja siempre al final de la card */
+    transition: all var(--transition-speed, 0.3s) ease;
+    box-shadow: 0 4px 12px rgba(0, 112, 243, 0.3); /* Sombra sutil azulada */
+    border: none;
+    cursor: pointer;
+}
+
+/* Efecto Hover Profesional */
+.card .btn:hover {
+    background-color: var(--primary-hover, #0051a8); /* Azul más oscuro al pasar el mouse */
+    transform: translateY(-3px); /* Pequeño salto hacia arriba */
+    box-shadow: 0 6px 18px rgba(0, 112, 243, 0.4);
+    color: #ffffff;
+}
+
+/* Estado activo para feedback táctil */
+.card .btn:active {
+    transform: translateY(-1px);
+}
+
+/* Ajuste específico para la Card Destacada para que resalte más */
+.card-destacada .btn {
+    background-color: var(--primary-color);
+    box-shadow: 0 4px 15px rgba(0, 112, 243, 0.5);
+}
+
+/* Efecto Hover Profesional */
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-color);
+}
+
+.card-destacada {
+    border: 2px solid var(--primary-color);
+    background-color: var(--surface-color);
+    transform: scale(1.05); /* Resalta el plan recomendado */
+}
+
+.card-destacada:hover {
+    transform: scale(1.05) translateY(-10px);
+}
+
+/* Estilos de la Card */
+.etiqueta-plan {
+    color: var(--primary-color);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+}
+
+.precio {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.lista-incluye {
+    list-style: none;
+    margin-bottom: 25px;
+    flex-grow: 1; /* Empuja el botón hacia abajo */
+}
+
+.lista-incluye li {
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+.lista-incluye li::before {
+    content: "✓ ";
+    color: var(--primary-color);
+}
+
+/* TABLA RESPONSIVAA */
+.seccion-tabla {
+    padding: 60px 20px;
+    background-color: var(--surface-color);
+}
+
+.tabla-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+}
+
+.tabla-precios {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--card-bg);
+    color: var(--text-main);
+}
+
+.tabla-precios th {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 18px;
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+.tabla-precios td {
+    padding: 18px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+tbody tr:hover {
+    background-color: var(--surface-color);
+}
+
+.badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+.disponible { background: rgba(46, 125, 50, 0.1); color: #2e7d32; }
+.limitado { background: rgba(245, 127, 23, 0.1); color: #f57f17; }
+
+/* Tooltip */
+.icono-info {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    font-size: 12px;
+    text-align: center;
+    line-height: 18px;
+    cursor: help;
+    margin-left: 5px;
+}
+
+@media screen and (max-width: 768px) {
+    .card-destacada {
+        transform: scale(1); /* Evita problemas de ancho en móviles */
+    }
+
+    .tabla-precios thead { display: none; } /* Oculta cabecera */
+    
+    .tabla-precios, .tabla-precios tbody, .tabla-precios tr, .tabla-precios td {
+        display: block;
+        width: 100%;
+    }
+
+    .tabla-precios tr { 
+        margin-bottom: 20px; 
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+    }
+
+    .tabla-precios td { 
+        text-align: right; 
+        padding: 15px;
+        padding-left: 50%; 
+        position: relative; 
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    /* Inserta el nombre de la columna usando el atributo data-label del HTML */
+    .tabla-precios td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 15px;
+        width: 45%;
+        font-weight: bold;
+        text-align: left;
+        color: var(--text-muted);
+    }
+}
