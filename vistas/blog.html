@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog de Destinos - TravelApp</title>
+    <!-- Mantenemos coherencia con los estilos del sitio -->
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/blog.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="../scripts/modo-oscuro.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav class="nav-principal">
+            <div class="nav-container">
+                <a href="home.html" class="logo">
+                     <h2><i class="fas fa-plane-departure" style="color: var(--primary-color);"></i> TravelApp</h2>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="destinos.html">Destinos</a></li>
+                    <li><a href="agencias.html">Agencias</a></li>
+                    <li><a href="blog.html" style="color: var(--primary-color); font-weight: bold;">Blog</a></li>
+                </ul>
+                <div class="nav-acciones">
+                    <button class="btn-tema" id="btn-tema" aria-label="Cambiar modo de tema">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="contenedor-blog">
+        <section class="titulo-seccion">
+            <h1>Crónicas de Viaje</h1>
+            <p>Descubrí tips, historias y rincones ocultos contados por nuestros expertos.</p>
+        </section>
+
+        <!-- Lógica de filtrado CSS (:checked y combinadores) -->
+        <input type="radio" name="filtro-blog" id="filtro-todos" checked>
+        <input type="radio" name="filtro-blog" id="filtro-tips">
+        <input type="radio" name="filtro-blog" id="filtro-aventura">
+        <input type="radio" name="filtro-blog" id="filtro-cultura">
+
+        <div class="controles-filtro">
+            <label for="filtro-todos">Todas las Notas</label>
+            <label for="filtro-tips">Tips de Viaje</label>
+            <label for="filtro-aventura">Aventura</label>
+            <label for="filtro-cultura">Cultura e Historia</label>
+        </div>
+
+        <section class="blog-grid">
+            
+            <article class="blog-card destacado categoria-aventura">
+                <!-- Por defecto se utilizará una imagen Unsplash. Nota para usuario: Se puede reemplazar src="..." -->
+                <img class="blog-imagen" src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=800" alt="Viaje de aventura">
+                <div class="blog-contenido">
+                    <span class="blog-categoria">Aventura</span>
+                    <h2 class="blog-titulo">Ascenso al Cerro Torre: El desafío definitivo en la Patagonia</h2>
+                    <p class="blog-extracto">Aventurarnos hacia una de las agujas de granito más impresionantes del planeta requiere más que solo equipo técnico. Descubrí de primera mano todo lo necesario para prepararte física y mentalmente para este coloso del sur de Argentina.</p>
+                    <div class="blog-meta">
+                        <span>Por Facundo Díaz</span>
+                        <span>Hace 2 días</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="blog-card span-2-rows categoria-cultura">
+                <img class="blog-imagen" src="https://images.unsplash.com/photo-1549880338-65ddcdfd017b?q=80&w=600" alt="Templo Asiatico">
+                <h2 class="blog-titulo">Misterios entre Templos</h2>
+                <div class="blog-contenido">
+                    <!-- Contenido oculto visualmente por CSS pero permite filtrado -->
+                </div>
+            </article>
+
+            <article class="blog-card categoria-tips">
+                <img class="blog-imagen" src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=600" alt="Equipaje de avion">
+                <div class="blog-contenido">
+                    <span class="blog-categoria">Tips de Viaje</span>
+                    <h2 class="blog-titulo">Cómo armar la carry-on perfecta</h2>
+                    <p class="blog-extracto">10 secretos de embalaje inteligente para no facturar maleta nunca más en tus viajes de corta duración.</p>
+                    <div class="blog-meta">
+                        <span>Por Ana Ruiz</span>
+                        <span>Hace 5 días</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="blog-card categoria-cultura">
+                <img class="blog-imagen" src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?q=80&w=600" alt="Coliseo Roma">
+                <div class="blog-contenido">
+                    <span class="blog-categoria">Cultura</span>
+                    <h2 class="blog-titulo">Roma Oculta: Más allá del Coliseo</h2>
+                    <p class="blog-extracto">Una guía para encontrar aquellas ruinas romanas subterráneas que frecuentan muy pocos turistas.</p>
+                    <div class="blog-meta">
+                        <span>Por Laura M.</span>
+                        <span>1 semana atrás</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="blog-card span-2-cols categoria-aventura">
+                <img class="blog-imagen" src="https://images.unsplash.com/photo-1682687220742-aba13b6e50ba?q=80&w=800" alt="Aventura Desierto">
+                <div class="blog-contenido">
+                    <span class="blog-categoria">Aventura</span>
+                    <h2 class="blog-titulo">El silencio del Sáhara: 3 noches bajo las estrellas</h2>
+                    <p class="blog-extracto">Dormir en un campamento beduino en pleno desierto es la manera más de reconectar con el inicio del todo. Nuestra travesía por Merzouga.</p>
+                    <div class="blog-meta">
+                        <span>Por Equipo Editorial</span>
+                        <span>2 semanas atrás</span>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="blog-card categoria-tips">
+                <img class="blog-imagen" src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?q=80&w=600" alt="Cafe en laptop">
+                <div class="blog-contenido">
+                    <span class="blog-categoria">Tips de Viaje</span>
+                    <h2 class="blog-titulo">Seguro de Viaje: ¿Es realmente necesario?</h2>
+                    <p class="blog-extracto">Desmontamos los mitos y analizamos la letra chica de los prestadores en caso de emergencia médica internacional.</p>
+                    <div class="blog-meta">
+                        <span>Por Martín Gómez</span>
+                        <span>1 mes atrás</span>
+                    </div>
+                </div>
+            </article>
+
+        </section>
+
+        <!-- SECCIÓN DE COMENTARIOS -->
+        <section class="seccion-comentarios">
+            <h2>Comentarios Recientes</h2>
+            <div class="lista-comentarios">
+                
+                <article class="comentario">
+                    <!-- Avatar puramente en CSS -->
+                    <div class="avatar-css"></div>
+                    <div class="info-comentario">
+                        <h4>Usuario Viajero_89</h4>
+                        <span class="fecha-comentario">Ayer a las 15:30</span>
+                        <p class="texto-comentario">Me encantó la nota sobre la Patagonia. ¿Están organizando salidas grupales para hacer ese trekking a finales de año? ¡Quiero sumarme!</p>
+                    </div>
+                </article>
+
+                <article class="comentario">
+                    <!-- Avatar puramente en CSS -->
+                    <div class="avatar-css"></div>
+                    <div class="info-comentario">
+                        <h4>AventureraX</h4>
+                        <span class="fecha-comentario">Hace 3 días</span>
+                        <p class="texto-comentario">Excelente el artículo de cómo armar la carry-on. Implementé la técnica de enrollar la ropa en mi viaje a Roma y me sobró lugar para traer regalitos. Totalmente recomendado.</p>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-principal">
+        <div class="footer-container">
+            <div class="footer-seccion footer-boletin">
+                <h3>Únete a nuestro Boletín</h3>
+                <p>Recibe ofertas exclusivas y guía de destinos en tu inbox.</p>
+                <form class="form-boletin">
+                    <div class="input-grupo">
+                        <input type="email" placeholder="Tu correo electrónico" required>
+                        <button type="submit" class="btn" style="padding: 10px 15px;">Suscribir</button>
+                    </div>
+                    <label class="checkbox-grupo">
+                        <input type="checkbox" required>
+                        Acepto la política de privacidad
+                    </label>
+                </form>
+            </div>
+            
+            <div class="footer-seccion footer-social">
+                <h3>Síguenos</h3>
+                <p>Mantente al día con nuestras últimas aventuras.</p>
+                <div class="redes-sociales">
+                    <a href="#" class="btn-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="btn-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="btn-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="btn-icon"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-seccion footer-mapa">
+                <h3>Dónde estamos</h3>
+                <div class="mapa-contenedor">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13136.06691436155!2d-58.3815704!3d-34.603722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccacf739efad3%3A0xe543fa0032e3a58e!2sObelisco!5e0!3m2!1ses!2sar!4v1714102875143!5m2!1ses!2sar" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 TravelApp. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
