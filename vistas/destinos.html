@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,15 +13,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="../scripts/modo-oscuro.js" defer></script>
 </head>
-<body>    
+
+<body>
     <header>
         <nav class="nav-principal">
             <div class="nav-container">
-                <a href="home.html" class="logo">
+                <a href="index.html" class="logo">
                     <h2><i class="fas fa-plane-departure" style="color: var(--primary-color);"></i> TravelApp</h2>
                 </a>
                 <ul class="nav-links">
-                    <li><a href="home.html">Home</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="destinos.html">Destinos</a></li>
                     <li><a href="agencias.html">Agencias</a></li>
                     <li><a href="blog.html">Blog</a></li>
@@ -35,7 +37,7 @@
             </div>
         </nav>
     </header>
-    
+
     <main class="contenedor-filtrado" style="margin-top: 100px;">
         <section class="titulo-seccion" style="text-align: center; margin-bottom: 2rem;">
             <h1>Nuestros Destinos</h1>
@@ -49,7 +51,7 @@
         <input type="radio" name="filtro" id="playa">
         <input type="radio" name="filtro" id="gastronomico">
         <input type="radio" name="filtro" id="religioso">
-    
+
         <div class="controles-filtro">
             <label for="todos">Todos</label>
             <label for="cultural">Cultural</label>
@@ -60,7 +62,7 @@
         </div>
 
         <section class="galeria-destinos">
-            
+
             <article class="card categoria-cultural span-grande">
                 <div class="card-imagen-contenedor">
                     <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?q=80&w=600" alt="Roma">
@@ -194,7 +196,7 @@
                     </label>
                 </form>
             </div>
-            
+
             <div class="footer-seccion footer-social">
                 <h3>Síguenos</h3>
                 <p>Mantente al día con nuestras últimas aventuras.</p>
@@ -209,7 +211,9 @@
             <div class="footer-seccion footer-mapa">
                 <h3>Dónde estamos</h3>
                 <div class="mapa-contenedor">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13136.06691436155!2d-58.3815704!3d-34.603722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccacf739efad3%3A0xe543fa0032e3a58e!2sObelisco!5e0!3m2!1ses!2sar!4v1714102875143!5m2!1ses!2sar" allowfullscreen="" loading="lazy"></iframe>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13136.06691436155!2d-58.3815704!3d-34.603722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccacf739efad3%3A0xe543fa0032e3a58e!2sObelisco!5e0!3m2!1ses!2sar!4v1714102875143!5m2!1ses!2sar"
+                        allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
         </div>
@@ -218,4 +222,5 @@
         </div>
     </footer>
 </body>
+
 </html>
