@@ -5,26 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Destinos - Explora el Mundo</title>
     <!-- Mantenemos coherencia con los estilos del home -->
-    <link rel="stylesheet" href="../css/home.css">
-    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/nav.css">
     <link rel="stylesheet" href="../css/destinos.css">
-    <!-- Enlace a la librería de íconos FontAwesome -->
+    <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="../scripts/modo-oscuro.js" defer></script>
 </head>
 <body>    
     <header>
-        <nav>
-            <ul>
-                <li><a href="home.html">Home</a></li>
-                <li><a href="#">Destinos</a></li>
-                <li><a href="#">Agendas</a></li>
-            </ul>
+        <nav class="nav-principal">
+            <div class="nav-container">
+                <a href="home.html" class="logo">
+                    <h2><i class="fas fa-plane-departure" style="color: var(--primary-color);"></i> TravelApp</h2>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="destinos.html">Destinos</a></li>
+                    <li><a href="agencias.html">Agencias</a></li>
+                </ul>
+                <div class="nav-acciones">
+                    <button class="btn-tema" id="btn-tema" aria-label="Cambiar modo de tema">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
         </nav>
     </header>
     
-    <main class="contenedor-filtrado">
-        <!-- Título y Descripción -->
-        <section class="titulo-pagina">
+    <main class="contenedor-filtrado" style="margin-top: 100px;">
+        <section class="titulo-seccion" style="text-align: center; margin-bottom: 2rem;">
             <h1>Nuestros Destinos</h1>
             <p>Filtra por tu categoría favorita y descubre tu próxima aventura.</p>
         </section>
@@ -46,90 +56,83 @@
             <label for="religioso">Religioso</label>
         </div>
 
-        <!-- Galería Masonry -->
         <section class="galeria-destinos">
             
-            <!-- Destino 1 - Cultural -->
             <article class="card categoria-cultural span-grande">
                 <div class="card-imagen-contenedor">
-                    <img src="../recursos/imagenes/destino1.webp" alt="Imagen 1">
+                    <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?q=80&w=600" alt="Roma">
                     <div class="overlay">
-                        <button class="btn-ver-mas">Ver más</button>
+                        <button class="btn-ver-mas">Ver Paquetes</button>
                     </div>
                 </div>
                 <div class="card-body">
-                    <h3>Destino Cultural 1</h3>
-                    <p>Sumérgete en la historia milenaria.</p>
+                    <h3>Roma Antigüa</h3>
+                    <p>Italia</p>
                 </div>
             </article>
 
-            <!-- Destino 2 - Naturaleza -->
             <article class="card categoria-naturaleza span-pequeno">
                 <div class="card-imagen-contenedor">
-                    <img src="../recursos/imagenes/destino2.webp" alt="Imagen 2">
+                    <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=600" alt="Patzcuaro">
                     <div class="overlay">
-                        <button class="btn-ver-mas">Ver más</button>
+                        <button class="btn-ver-mas">Explorar</button>
                     </div>
                 </div>
                 <div class="card-body">
-                    <h3>Destino Naturaleza 2</h3>
-                    <p>Aire puro y paisajes verdes.</p>
+                    <h3>Lagos del Sur</h3>
+                    <p>Argentina</p>
                 </div>
             </article>
 
-            <!-- Destino 3 - Sol y Playa -->
             <article class="card categoria-playa span-mediano">
                 <div class="card-imagen-contenedor">
-                    <img src="../recursos/imagenes/destino3.webp" alt="Imagen 3">
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=600" alt="Playa">
                     <div class="overlay">
-                        <button class="btn-ver-mas">Ver más</button>
+                        <button class="btn-ver-mas">Ver Detalles</button>
                     </div>
                 </div>
                 <div class="card-body">
-                    <h3>Destino Playa 3</h3>
-                    <p>Relajación frente al mar azul.</p>
+                    <h3>Maldivas</h3>
+                    <p>Océano Índico</p>
                 </div>
             </article>
 
-            <!-- Destino 4 - Gastronómico -->
             <article class="card categoria-gastronomico span-grande">
                 <div class="card-imagen-contenedor">
-                    <img src="../recursos/imagenes/destino4.webp" alt="Imagen 4">
+                    <img src="https://images.unsplash.com/photo-1547496502-affa22d38842?q=80&w=600" alt="Comida">
                     <div class="overlay">
-                        <button class="btn-ver-mas">Ver más</button>
+                        <button class="btn-ver-mas">Degustar</button>
                     </div>
                 </div>
                 <div class="card-body">
-                    <h3>Destino Gourmet 4</h3>
-                    <p>Un festival de sabores locales.</p>
+                    <h3>Ruta del Vino</h3>
+                    <p>Francia</p>
                 </div>
             </article>
 
-            <!-- Destino 5 - Religioso -->
             <article class="card categoria-religioso span-pequeno">
                 <div class="card-imagen-contenedor">
-                    <img src="../recursos/imagenes/destino5.webp" alt="Imagen 5">
+                    <img src="https://images.unsplash.com/photo-1565008447742-97f6f38c985c?q=80&w=600" alt="Templo">
                     <div class="overlay">
-                        <button class="btn-ver-mas">Ver más</button>
+                        <button class="btn-ver-mas">Conocer</button>
                     </div>
                 </div>
                 <div class="card-body">
-                    <h3>Destino Religioso 5</h3>
-                    <p>Paz espiritual y templos sagrados.</p>
+                    <h3>Templos de Kioto</h3>
+                    <p>Japón</p>
                 </div>
             </article>
 
-            <!-- Destino 6 - Cultural -->
             <article class="card categoria-cultural span-mediano">
                 <div class="card-imagen-contenedor">
-                    <img src="../recursos/imagenes/destino6.webp" alt="Imagen 6">
+                    <img src="https://images.unsplash.com/photo-1585506942812-e72b29cef752?q=80&w=600" alt="Museo">
                     <div class="overlay">
-                        <button class="btn-ver-mas">Ver más</button>
+                        <button class="btn-ver-mas">Recorrer</button>
                     </div>
                 </div>
                 <div class="card-body">
-                    <h3>Destino Cultural 6</h3>
-                    <p>Arquitectura urbana y museos.</p>
+                    <h3>El Louvre</h3>
+                    <p>París</p>
                 </div>
             </article>
         </section>
@@ -142,40 +145,29 @@
                     <thead>
                         <tr>
                             <th>Destino</th>
-                            <th>Categoría</th>
-                            <th>Temporada Baja</th>
-                            <th>Temporada Alta</th>
+                            <th>Temp. Baja</th>
+                            <th>Temp. Alta</th>
                             <th>Disponibilidad</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td data-label="Destino">Tokio</td>
-                            <td data-label="Categoría">Cultural</td>
-                            <td data-label="T. Baja">$1.200</td>
-                            <td data-label="T. Alta">$1.800</td>
-                            <td data-label="Disponibilidad"><span class="estado disponible">Disponible</span></td>
+                            <td data-label="Destino">Roma, Italia</td>
+                            <td data-label="Temp. Baja">$850</td>
+                            <td data-label="Temp. Alta">$1,200</td>
+                            <td data-label="Disponibilidad"><span class="estado disponible">Alta</span></td>
                         </tr>
                         <tr>
-                            <td data-label="Destino">Amazonas</td>
-                            <td data-label="Categoría">Naturaleza</td>
-                            <td data-label="T. Baja">$800</td>
-                            <td data-label="T. Alta">$1.100</td>
-                            <td data-label="Disponibilidad"><span class="estado limitado">Cupos Limitados</span></td>
+                            <td data-label="Destino">Maldivas</td>
+                            <td data-label="Temp. Baja">$1,500</td>
+                            <td data-label="Temp. Alta">$2,800</td>
+                            <td data-label="Disponibilidad"><span class="estado limitado">Limitada</span></td>
                         </tr>
                         <tr>
-                            <td data-label="Destino">Ibiza</td>
-                            <td data-label="Categoría">Sol y Playa</td>
-                            <td data-label="T. Baja">$950</td>
-                            <td data-label="T. Alta">$1.500</td>
-                            <td data-label="Disponibilidad"><span class="estado disponible">Disponible</span></td>
-                        </tr>
-                        <tr>
-                            <td data-label="Destino">Roma</td>
-                            <td data-label="Categoría">Religioso</td>
-                            <td data-label="T. Baja">$1.100</td>
-                            <td data-label="T. Alta">$1.400</td>
-                            <td data-label="Disponibilidad"><span class="estado disponible">Disponible</span></td>
+                            <td data-label="Destino">Kioto, Japón</td>
+                            <td data-label="Temp. Baja">$900</td>
+                            <td data-label="Temp. Alta">$1,500</td>
+                            <td data-label="Disponibilidad"><span class="estado disponible">Alta</span></td>
                         </tr>
                     </tbody>
                 </table>
@@ -183,28 +175,44 @@
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer-contenedor">
-        <form>
-            <label for="email">Suscríbete al boletín</label>
-            <input type="email" id="email" name="email" placeholder="Ingresa tu correo">
-            <label for="terminos">Acepto los términos y condiciones</label>
-            <input type="checkbox" id="terminos" name="terminos" required>
-            <button type="submit" class="btn">Enviar</button>
-        </form>
+    <footer class="footer-principal">
+        <div class="footer-container">
+            <div class="footer-seccion footer-boletin">
+                <h3>Únete a nuestro Boletín</h3>
+                <p>Recibe ofertas exclusivas y guía de destinos en tu inbox.</p>
+                <form class="form-boletin">
+                    <div class="input-grupo">
+                        <input type="email" placeholder="Tu correo electrónico" required>
+                        <button type="submit" class="btn" style="padding: 10px 15px;">Suscribir</button>
+                    </div>
+                    <label class="checkbox-grupo">
+                        <input type="checkbox" required>
+                        Acepto la política de privacidad
+                    </label>
+                </form>
+            </div>
+            
+            <div class="footer-seccion footer-social">
+                <h3>Síguenos</h3>
+                <p>Mantente al día con nuestras últimas aventuras.</p>
+                <div class="redes-sociales">
+                    <a href="#" class="btn-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="btn-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="btn-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="btn-icon"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
 
-        <div class="redes-sociales">
-            <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i> Facebook</a>
-            <a href="https://x.com/"><i class="fab fa-twitter"></i> Twitter</a>
-            <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i> Instagram</a>
+            <div class="footer-seccion footer-mapa">
+                <h3>Dónde estamos</h3>
+                <div class="mapa-contenedor">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13136.06691436155!2d-58.3815704!3d-34.603722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccacf739efad3%3A0xe543fa0032e3a58e!2sObelisco!5e0!3m2!1ses!2sar!4v1714102875143!5m2!1ses!2sar" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
         </div>
-
-        <div class="mapa-contenedor">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d22743.92999949358!2d-65.29676300302103!3d-24.174256554197044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sar!4v1775945830629!5m2!1ses-419!2sar"
-                width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <div class="footer-bottom">
+            <p>&copy; 2026 TravelApp. Todos los derechos reservados.</p>
         </div>
     </footer>
-
 </body>
 </html>

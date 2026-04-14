@@ -4,44 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nuestras Agencias - Turismo</title>
-    <!-- Mantenemos coherencia con los estilos base -->
-    <link rel="stylesheet" href="../css/home.css">
-    <link rel="stylesheet" href="../css/footer.css">
+    <!-- Estilos base, navegación y footer del Home -->
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/nav.css">
     <link rel="stylesheet" href="../css/agencias.css">
-    <!-- FontAwesome para las estrellas e iconos -->
+    <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Script de Modo Oscuro -->
+    <script src="../scripts/modo-oscuro.js" defer></script>
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="home.html">Home</a></li>
-                <li><a href="destinos.html">Destinos</a></li>
-                <li><a href="#">Agencias</a></li>
-            </ul>
+        <nav class="nav-principal">
+            <div class="nav-container">
+                <a href="home.html" class="logo">
+                    <!-- Puedes poner un icono o imagen de logo aca -->
+                    <h2><i class="fas fa-plane-departure" style="color: var(--primary-color);"></i> TravelApp</h2>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="destinos.html">Destinos</a></li>
+                    <li><a href="agencias.html">Agencias</a></li>
+                </ul>
+                <div class="nav-acciones">
+                    <button class="btn-tema" id="btn-tema" aria-label="Cambiar modo de tema">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
         </nav>
     </header>
 
-    <main class="contenedor-agencias">
+    <main class="contenedor-agencias" style="margin-top: 100px;">
         <section class="titulo-seccion">
             <h1>Agencias Asociadas</h1>
             <p>Conoce a los expertos que harán realidad tu próximo viaje.</p>
         </section>
 
         <section class="grid-agencias">
-            
             <!-- Agencia 1 -->
             <article class="flip-card">
                 <div class="flip-card-inner">
-                    <!-- Frente de la tarjeta -->
                     <div class="flip-card-front">
-                        <img src="../recursos/imagenes/agencia1.jpg" alt="Agencia Explorer">
+                        <img src="../recursos/imagenes/agencia1.jpg" alt="Agencia Explorer" onerror="this.src='https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=600'">
                         <div class="info-front">
                             <h3>Explorer Global</h3>
                             <p>Especialistas en Aventuras</p>
                         </div>
                     </div>
-                    <!-- Dorso de la tarjeta -->
                     <div class="flip-card-back">
                         <h3>Detalles de Agencia</h3>
                         <ul>
@@ -49,16 +59,14 @@
                             <li><i class="fas fa-plane"></i> +500 destinos</li>
                             <li><i class="fas fa-clock"></i> Lun - Vie: 9h a 18h</li>
                         </ul>
-                        
-                        <!-- Sistema de Rating CSS -->
                         <div class="rating-sistema">
                             <p>Calificación:</p>
                             <div class="estrellas">
-                                <input type="radio" name="rating1" id="star1-5"><label for="star1-5">★</label>
-                                <input type="radio" name="rating1" id="star1-4"><label for="star1-4">★</label>
-                                <input type="radio" name="rating1" id="star1-3" checked><label for="star1-3">★</label>
-                                <input type="radio" name="rating1" id="star1-2"><label for="star1-2">★</label>
-                                <input type="radio" name="rating1" id="star1-1"><label for="star1-1">★</label>
+                                <input type="radio" name="r1" id="e5-1"><label for="e5-1">★</label>
+                                <input type="radio" name="r1" id="e4-1"><label for="e4-1">★</label>
+                                <input type="radio" name="r1" id="e3-1" checked><label for="e3-1">★</label>
+                                <input type="radio" name="r1" id="e2-1"><label for="e2-1">★</label>
+                                <input type="radio" name="r1" id="e1-1"><label for="e1-1">★</label>
                             </div>
                         </div>
                         <button class="btn-contacto">Contactar</button>
@@ -70,7 +78,7 @@
             <article class="flip-card">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
-                        <img src="../recursos/imagenes/agencia2.jpg" alt="Agencia Luxury">
+                        <img src="../recursos/imagenes/agencia2.jpg" alt="Agencia Luxury" onerror="this.src='https://images.unsplash.com/photo-1556761175-5973dc0f32b7?q=80&w=600'">
                         <div class="info-front">
                             <h3>Luxury Travel</h3>
                             <p>Experiencias Premium</p>
@@ -86,56 +94,90 @@
                         <div class="rating-sistema">
                             <p>Calificación:</p>
                             <div class="estrellas">
-                                <input type="radio" name="rating2" id="star2-5"><label for="star2-5">★</label>
-                                <input type="radio" name="rating2" id="star2-4" checked><label for="star2-4">★</label>
-                                <input type="radio" name="rating2" id="star2-3"><label for="star2-3">★</label>
-                                <input type="radio" name="rating2" id="star2-2"><label for="star2-2">★</label>
-                                <input type="radio" name="rating2" id="star2-1"><label for="star2-1">★</label>
+                                <input type="radio" name="r2" id="e5-2" checked><label for="e5-2">★</label>
+                                <input type="radio" name="r2" id="e4-2"><label for="e4-2">★</label>
+                                <input type="radio" name="r2" id="e3-2"><label for="e3-2">★</label>
+                                <input type="radio" name="r2" id="e2-2"><label for="e2-2">★</label>
+                                <input type="radio" name="r2" id="e1-2"><label for="e1-2">★</label>
                             </div>
                         </div>
                         <button class="btn-contacto">Contactar</button>
                     </div>
                 </div>
             </article>
-        
 
+            <!-- Agencia 3 -->
             <article class="flip-card">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
-                        <img src="../recursos/imagenes/agencia3.jpg" alt="Agencia EcoVistas">
+                        <img src="../recursos/imagenes/agencia3.jpg" alt="Agencia EcoVistas" onerror="this.src='https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=600'">
                         <div class="info-front">
-                            <h3>EcoVistas Tours</h3>
+                            <h3>Eco Vistas</h3>
                             <p>Turismo Sustentable</p>
                         </div>
                     </div>
                     <div class="flip-card-back">
                         <h3>Detalles de Agencia</h3>
                         <ul>
-                            <li><i class="fas fa-map-marker-alt"></i> San José, CRI</li>
-                            <li><i class="fas fa-leaf"></i> Carbono Neutral</li>
-                            <li><i class="fas fa-tree"></i> Guías Certificados</li>
+                            <li><i class="fas fa-map-marker-alt"></i> San José, CR</li>
+                            <li><i class="fas fa-leaf"></i> 100% Ecológico</li>
+                            <li><i class="fas fa-users"></i> Grupos reducidos</li>
                         </ul>
                         <div class="rating-sistema">
                             <p>Calificación:</p>
                             <div class="estrellas">
-                                <input type="radio" name="rating3" id="star3-5" checked><label for="star3-5">★</label>
-                                <input type="radio" name="rating3" id="star3-4"><label for="star3-4">★</label>
-                                <input type="radio" name="rating3" id="star3-3"><label for="star3-3">★</label>
-                                <input type="radio" name="rating3" id="star3-2"><label for="star3-2">★</label>
-                                <input type="radio" name="rating3" id="star3-1"><label for="star3-1">★</label>
+                                <input type="radio" name="r3" id="e5-3"><label for="e5-3">★</label>
+                                <input type="radio" name="r3" id="e4-3" checked><label for="e4-3">★</label>
+                                <input type="radio" name="r3" id="e3-3"><label for="e3-3">★</label>
+                                <input type="radio" name="r3" id="e2-3"><label for="e2-3">★</label>
+                                <input type="radio" name="r3" id="e1-3"><label for="e1-3">★</label>
                             </div>
                         </div>
                         <button class="btn-contacto">Contactar</button>
                     </div>
                 </div>
             </article>
-
         </section>
     </main>
 
-    <footer class="footer-contenedor">
-        <!-- Reutilizar el contenido del footer del home -->
-        <p>&copy; 2026 Agencia de Turismo. Todos los derechos reservados.</p>
+    <footer class="footer-principal">
+        <div class="footer-container">
+            <div class="footer-seccion footer-boletin">
+                <h3>Únete a nuestro Boletín</h3>
+                <p>Recibe ofertas exclusivas y guía de destinos en tu inbox.</p>
+                <form class="form-boletin">
+                    <div class="input-grupo">
+                        <input type="email" placeholder="Tu correo electrónico" required>
+                        <button type="submit" class="btn" style="padding: 10px 15px;">Suscribir</button>
+                    </div>
+                    <label class="checkbox-grupo">
+                        <input type="checkbox" required>
+                        Acepto la política de privacidad
+                    </label>
+                </form>
+            </div>
+            
+            <div class="footer-seccion footer-social">
+                <h3>Síguenos</h3>
+                <p>Mantente al día con nuestras últimas aventuras.</p>
+                <div class="redes-sociales">
+                    <a href="#" class="btn-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="btn-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="btn-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="btn-icon"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-seccion footer-mapa">
+                <h3>Dónde estamos</h3>
+                <div class="mapa-contenedor">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13136.06691436155!2d-58.3815704!3d-34.603722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccacf739efad3%3A0xe543fa0032e3a58e!2sObelisco!5e0!3m2!1ses!2sar!4v1714102875143!5m2!1ses!2sar" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 TravelApp. Todos los derechos reservados.</p>
+        </div>
     </footer>
 </body>
 </html>
